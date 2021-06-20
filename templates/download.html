@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+  <div class="page-header pt-5 pb-2">
+    <h1>{{ filename }}</h1>
+    <p>予測が完了しました。</p>
+  </div>
+  <form
+    action="/export"
+    method="POST"
+    enctype="multipart/form-data"
+    class="form-inline d-flex"
+  >
+    <div class="m-2">
+      <p>csvダウンロード</p>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      name="filename"
+      value="{{ filename }}"
+    >
+      Download
+    </button>
+  </form>
+</div>
+{% endblock %}
